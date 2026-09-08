@@ -1,0 +1,10 @@
+{
+  "description": "Monitor IoT devices with a user-friendly dashboard displaying water availability, temperature, consumption, and device status for efficient management.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

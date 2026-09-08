@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@keyframes blink-danger {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--t-border); border-radius: 2px; }
+
+/* ── Dark theme (default) ── */
+:root {
+  --t-bg:           #0a0d12;
+  --t-surface:      #111621;
+  --t-surface-deep: #0a0d12;
+  --t-border:       #1e2535;
+  --t-text:         #e2e8f0;
+  --t-muted:        #8b95a8;
+  --t-dim:          #6b7280;
+  --t-primary:      #00d4aa;
+  --t-primary-dim:  #00d4aa22;
+  --t-primary-ring: #00d4aa44;
+  --t-accent:       #00b4d8;
+  --t-cold:         #48cae4;
+  --t-hot:          #ff6b6b;
+  --t-warning:      #f4a261;
+  --t-danger:       #ff4d6d;
+  --t-offline:      #374151;
+}
+
+/* ── Light theme ── */
+.light {
+  --t-bg:           #f0f4f8;
+  --t-surface:      #ffffff;
+  --t-surface-deep: #e8edf3;
+  --t-border:       #d1d9e0;
+  --t-text:         #1a2235;
+  --t-muted:        #64748b;
+  --t-dim:          #94a3b8;
+  --t-primary:      #00d4aa;
+  --t-primary-dim:  #00d4aa18;
+  --t-primary-ring: #00d4aa44;
+  --t-accent:       #00b4d8;
+  --t-cold:         #0ea5e9;
+  --t-hot:          #dc2626;
+  --t-warning:      #d97706;
+  --t-danger:       #e11d48;
+  --t-offline:      #cbd5e1;
+}
