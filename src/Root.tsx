@@ -7,7 +7,10 @@ import App from "./App";
 export default function Root() {
   const [user, setUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : false;
+  });
 
   useEffect(() => {
     return onAuthStateChanged(auth, (u) => {
@@ -18,7 +21,12 @@ export default function Root() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("light", !dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
+
+  useEffect(() => {
+    document.title = "Dispenser Monitor";
+  }, []);
 
   if (authLoading) {
     return (

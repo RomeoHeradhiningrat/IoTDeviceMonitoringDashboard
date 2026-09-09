@@ -71,7 +71,7 @@ function XIcon() {
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function isOnlineByLastSeen(lastSeen: number): boolean {
-  return Date.now() - lastSeen < 30_000;
+  return Date.now() - lastSeen < 40_000;
 }
 
 function timeAgo(ts: number): string {
@@ -288,7 +288,7 @@ function AddDeviceModal({ onClose, onAdd, existingIds }: {
               DEVICE ID
             </label>
             <input
-              placeholder="contoh: 6pRV"
+              placeholder="contoh: AbCd"
               value={deviceId}
               onChange={(e) => { setDeviceId(e.target.value); setError(""); }}
               style={{ ...inputStyle, borderColor: error ? "var(--t-danger)" : "var(--t-border)" }}
@@ -480,8 +480,8 @@ export default function App({ user, dark, onToggleDark, onLogout }: AppProps) {
         style={{ background: "var(--t-bg)ee", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--t-border)" }}>
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg"
-            style={{ background: "var(--t-primary-dim)", border: "1px solid var(--t-primary-ring)" }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            style={{ background: "var(--t-primary-dim)" }}>
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
               <path d="M8 1C5.5 1 4 3 4 5c0 3 4 10 4 10s4-7 4-10c0-2-1.5-4-4-4z" stroke="var(--t-primary)" strokeWidth="1.2" fill="var(--t-primary-dim)" />
               <circle cx="8" cy="5" r="1.5" fill="var(--t-primary)" />
             </svg>
